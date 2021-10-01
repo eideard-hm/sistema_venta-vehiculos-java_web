@@ -1,0 +1,573 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  width: 100%;
+  height: 65px;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.header .barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header .barra .content-logo {
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 900;
+  display: flex;
+}
+.header .barra .content-logo .logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.header .barra .content-logo h2 span {
+  color: orange;
+}
+.header .barra .nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+  margin-right: 12px;
+}
+.header .barra .nav a.btn-init {
+  width: 60px;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.header .barra .nav a.btn-init.iniciar {
+  background-color: #fff;
+  color: #000;
+}
+.header .barra .nav a.btn-init.registro {
+  background-color: #000;
+  color: #fff;
+}
+.header .barra .nav a:last-of-type {
+  margin: 0;
+}
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contenedor-datatables{
+    margin-top: 100px;
+}
+
+.agregar{
+    margin:20px 0px ;
+    background: #00f;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.agregar i{
+    margin-right: 8px;
+}
+
+.agregar a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*
+===================== CÓDIGO DEL PERFIL USUARIO BARRA DE NAVEGACION=========================
+*/
+
+.imagen-persona {  
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imagen-persona img {  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-persona {
+  position: absolute;
+  top: 90px;
+  left: 80%;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+}
+
+.info-persona.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.1);
+  transition: 0.4s transform ease-out;
+}
+
+.info-persona h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0px;
+  font-weight: 600;
+  color: #555;
+}
+
+.info-persona h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 400;
+}
+
+.info-persona::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 40px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.info-persona ul li {
+  list-style: none;
+  padding: 10px 0px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.info-persona ul li i {
+  margin-right: 15px;
+  opacity: 0.5;
+  color: #cecece;
+  transition: 0.3s opacity ease;
+}
+
+.info-persona ul li:hover i {
+  opacity: 1;
+}
+.info-persona ul li a {
+  text-decoration: none;
+  color: #555;
+}
+
+.info-persona ul li:hover a {
+  color: #ff5d94;
+}
+
+/*
+===================== CÓDIGO DEl SLIDER DE IMAGENES=========================
+*/
+
+.slider-img {
+  margin-top: 65px;
+  width: 100%;
+  height: 500px;
+  background-color: #eee;
+  position: relative;
+}
+.slider-img .slider {
+  position: absolute;
+  width: 95%;
+  height: 100%;
+  left: 2.5%;
+  right: 2.5%;
+  clip-path: circle(0% at 0% 50%);
+}
+.slider-img .slider.active {
+  clip-path: circle(150% at 0% 50%);
+  background: #ddd;
+  transition: clip-path 0.4s ease-in-out;
+}
+.slider-img .slider img {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  right: 0;
+  padding: 50px;
+}
+.slider-img .slider .info-slider {
+  position: absolute;
+  top: 5%;
+  left: 0px;
+  width: 40%;
+  padding: 50px;
+}
+.slider-img .btns {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-img .btns .btn {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  margin: 12px;
+  cursor: pointer;
+}
+.slider-img .btns .btn.active {
+  background-color: #00f;
+}
+.seccion-scroll {
+  margin-top: 80px;
+  background: #eee;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+#ir-arriba {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  border: 4px solid transparent;
+  transition: transform 0.4s, border 0.3s linear;
+}
+#ir-arriba:hover {
+  transform: scale(1.1);
+  border: 4px solid rgba(0, 0, 0, 0.1);
+}
+#ir-arriba i {
+  color: #fff;
+  font-size: 30px;
+}
+#ir-arriba.ocultar {
+  transform: scale(0);
+}
+#ir-arriba.mostrar {
+  transform: scale(1);
+}
+.indicador-contenedor {
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  height: 7px;
+  z-index: 1001;
+}
+.indicador-contenedor .indicador-scroll {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #348ac7, #7474bf);
+}
+/*# sourceMappingURL=estilos.css.map */
+
+/*
+===================== CÓDIGO DE LOS FORMULARIO=========================
+*/
+
+.wrap {
+  width: 90%;
+  margin: auto;
+  max-width: 700px;
+  background: #fff;
+  box-shadow: 0px 0px 10px gray;
+  padding: 25px;
+  border-radius: 3px;
+  margin-top: 66px;
+}
+.wrap .form {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.wrap .form .titulo-accion{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0px
+}
+
+.wrap .form .contenedor-grupo {
+  position: relative;
+  margin-bottom: 32px;
+}
+.wrap .form .contenedor-grupo.w50 {
+  width: 47%;
+}
+.wrap .form .contenedor-grupo.w100 {
+  display: block;
+  width: 100%;
+}
+.wrap .form .contenedor-grupo input,
+.wrap .form .contenedor-grupo select {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #bbdefb;
+  font-size: 16px;
+  outline: none;
+  padding: 15px;
+  width: 100%;
+  font-size: 17px;
+}
+.wrap .form .contenedor-grupo input + .barra {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.wrap .form .contenedor-grupo input + .barra::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #b06ab3, #4568dc);
+  transition: 0.4s ease width;
+}
+.wrap .form .contenedor-grupo input:focus + .barra::before,
+.wrap .form .contenedor-grupo input:valid + .barra::before {
+  width: 100%;
+}
+.wrap .form .contenedor-grupo input:focus ~ label,
+.wrap .form .contenedor-grupo input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+  color: #b6b6b6;
+}
+.wrap .form .contenedor-grupo input.error {
+  border-bottom: 2px solid #d32f2f;
+}
+.wrap .form .contenedor-grupo input.error + label {
+  color: #d32f2f;
+}
+.wrap .form .contenedor-grupo .estado-input {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  line-height: 15px;
+  font-size: 16px;
+  opacity: 0;
+}
+.wrap .form .contenedor-grupo label {
+  position: absolute;
+  color: #303f9f;
+  top: 15px;
+  left: 0;
+  font-size: 16px;
+  line-height: 16px;
+  margin-left: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.wrap .form .contenedor-grupo .verPass {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #b6b6b6;
+  font-size: 18px;
+  line-height: 18px;
+  cursor: pointer;
+}
+.wrap .form .contenedor-grupo .verPass .ocultar {
+  display: none;
+}
+.wrap .form .contenedor-grupo .verPass.active .mostrar {
+  display: none;
+}
+.wrap .form .contenedor-grupo .verPass.active .ocultar {
+  display: inline-block;
+}
+.wrap .form .contenedor-grupo .leyenda-input {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  display: none;
+}
+.wrap .form .contenedor-grupo .leyenda-input.active {
+  display: block;
+}
+.wrap .form .contenedor-grupo .mensaje-error {
+  height: 45px;
+  line-height: 45px;
+  background-color: #f66060;
+  padding: 0 15px;
+  border-radius: 3px;
+  display: none;
+}
+.wrap .form .contenedor-grupo .mensaje-error.activo {
+  display: block;
+}
+.wrap .form .contenedor-grupo.btn-enviar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.wrap .form .contenedor-grupo.btn-enviar button {
+  width: 80%;
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  outline: none;
+  background-color: #303f9f;
+  font-weight: 900;
+  margin: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.1s ease box-shadow;
+}
+.wrap .form .contenedor-grupo.btn-enviar button:hover {
+  box-shadow: 3px 0px 30px #a3a3a3;
+}
+.wrap .form .contenedor-grupo.btn-enviar .mensaje-exito {
+  font-size: 14px;
+  color: #119200;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+}
+.wrap .form .contenedor-grupo.btn-enviar .mensaje-exito.activo {
+  display: block;
+}
+.wrap .form .contenedor-grupo.correcto .estado-input {
+  color: #1ed12d;
+  opacity: 1;
+}
+.wrap .form .contenedor-grupo.incorrecto label {
+  color: #bb2929;
+}
+.wrap .form .contenedor-grupo.incorrecto .estado-input {
+  color: #bb2929;
+  opacity: 1;
+}
+.wrap .form .contenedor-grupo.incorrecto .barra::before {
+  width: 100%;
+  background: #bb2929;
+}
+
+/*
+=======================PROVISUALIZAR LA IMGEN DEL USUARIO
+*/
+.prevPhoto {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  position: relative;
+  cursor: pointer;
+  /* background: url(../img/upload.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; */
+  margin: auto;
+}
+.prevPhoto label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.prevPhoto img {
+  width: 100%;
+  height: 100%;
+}
+.upimg,
+.notBlock {
+  display: none !important;
+}
+.errorArchivo {
+  font-size: 16px;
+  font-family: arial;
+  color: #cc0000;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.delPhoto {
+  color: #fff;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: red;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 10;
+}
+#tbl_list_productos img {
+  width: 50px;
+}
+.imgProductoDelete {
+  width: 175px;
+}
+
+
+
+/*
+===================== CÓDIGO DE LOS BOTONES DE LA CRUD =========================
+*/
+
+.btn-crud{
+    width: 25%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px rgba(170,170,170, 0.4);
+    transition: .3s transform linear;
+}
+
+.btn-crud:hover{
+    transform: scale(1.1);
+}
+
+.btn-crud i{
+    margin-left: 8px;
+}
+
+.btn-guardar{
+    background: #0f0;
+}
+
